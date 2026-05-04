@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Pointer Lock</title>
+    <title>Pointer Lock – 3D Scenarios</title>
     <script type="importmap">
     {
       "imports": {
@@ -18,7 +18,8 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.5);
+            z-index: 500;
         }
 
         #instructions {
@@ -31,19 +32,27 @@
             text-align: center;
             font-size: 14px;
             cursor: pointer;
-            color: #ffffff;
+            color: white;
+            line-height: 1.8;
         }
     </style>
 </head>
 <body>
 
+    <!-- Blocker DEBE estar en el HTML, no inyectado por JS -->
     <div id="blocker">
         <div id="instructions">
             <p style="font-size:36px">Click para jugar</p>
-            <p>WASD — moverse<br/>Mouse — mirar<br/>Espacio — saltar</p>
+            <p>WASD — moverse<br>Mouse — mirar<br>Espacio — saltar</p>
         </div>
     </div>
 
+    <script type="module">
+        import { injectLayout } from '../assets/js/core/layout.js';
+        injectLayout('pointerlock');
+    </script>
+
+    <!-- pointerlock.js carga DESPUÉS, cuando blocker ya existe en el DOM -->
     <script type="module" src="../assets/js/scenarios/pointerlock.js"></script>
 
 </body>

@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Map Controls</title>
-    <!-- ✅ importmap PRIMERO, antes de cualquier script module -->
+    <title>Minecraft – 3D Scenarios</title>
     <script type="importmap">
     {
       "imports": {
@@ -12,13 +11,16 @@
       }
     }
     </script>
+    <style>
+        body { margin: 0; overflow: hidden; }
+    </style>
 </head>
 <body>
-
-<div id="app"></div>
-
-<!-- ✅ El módulo va DESPUÉS del importmap -->
-<script type="module" src="../assets/js/scenarios/minecraft.js"></script>
-
+    <div id="app"></div>
+    <script type="module">
+        import { injectLayout } from '../assets/js/core/layout.js';
+        injectLayout('minecraft'); // ← cambia por el nombre del escenario
+    </script>
+    <script type="module" src="../assets/js/scenarios/minecraft.js"></script>
 </body>
 </html>

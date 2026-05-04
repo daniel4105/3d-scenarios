@@ -1,6 +1,8 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Transform Controls</title>
+    <title>Transform – 3D Scenarios</title>
     <script type="importmap">
     {
       "imports": {
@@ -10,24 +12,21 @@
     }
     </script>
     <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
+        body { margin: 0; overflow: hidden; }
 
         #info {
-            position: absolute;
-            top: 10px;
+            position: fixed;
+            bottom: 50px;  /* encima del footer */
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
             font-family: monospace;
             font-size: 13px;
-            color: #fff;
-            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            background: rgba(0,0,0,0.5);
             padding: 8px 16px;
             border-radius: 6px;
-            z-index: 100;
+            z-index: 500;  /* encima del canvas, debajo del navbar/footer */
             pointer-events: none;
             line-height: 1.8;
         }
@@ -43,8 +42,12 @@
         "C" toggle camera | "V" random zoom
     </div>
 
-    <div id="app"></div>
+    <script type="module">
+        import { injectLayout } from '../assets/js/core/layout.js';
+        injectLayout('transform');
+    </script>
 
     <script type="module" src="../assets/js/scenarios/transform.js"></script>
 
 </body>
+</html>
