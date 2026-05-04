@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map Controls</title>
+    <!-- ✅ importmap PRIMERO, antes de cualquier script module -->
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.167.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.167.0/examples/jsm/"
+      }
+    }
+    </script>
+</head>
+<body>
+
+<div id="app"></div>
+
+<!-- ✅ El módulo va DESPUÉS del importmap -->
+<script type="module" src="../assets/js/scenarios/map.js"></script>
+
+</body>
+</html>
